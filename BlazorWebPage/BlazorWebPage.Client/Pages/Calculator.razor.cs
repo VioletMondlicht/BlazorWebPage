@@ -1,16 +1,13 @@
-﻿using System.Net.NetworkInformation;
-using System;
-using BlazorWebPage.Client.Services;
-using BlazorWebPage.Client.Shared;
+﻿using BlazorWebPage.Client.Shared;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorWebPage.Client.Pages;
 
-public partial class Calculator
+public partial class Calculator : ComponentBase
 {
-    [Inject] public ICalculatorService CalculatorService1 { get; set; } = null!;
+    [Inject] public ICalculatorService CalculatorService { get; set; } = null!;
 
-    private string InputNumber { get; set; } = "0";
+    private string InputNumber { get; set; } = "";
     private string Calculation { get; set; } = "";
     private bool waitingForNewInput = false;
     private bool operationJustAdded = false;
@@ -24,7 +21,7 @@ public partial class Calculator
         operationJustAdded = false;
     }
 
-    private async Task Calculate()
+    public async Task Calculate()
     {
         Console.WriteLine($"Calculate Method called. Current Calculation string: '{Calculation}', InputNumber: '{InputNumber}'");
 
@@ -70,7 +67,7 @@ public partial class Calculator
     }
 
     private void DeleteDigit() => InputNumber = InputNumber.Length > 1 ? InputNumber[..^1] : "";
-    private void AddDigit(string digit)
+    public void AddDigit(string digit)
     {
         if (digit == ",")
         {

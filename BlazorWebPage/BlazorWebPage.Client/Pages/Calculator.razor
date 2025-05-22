@@ -1,11 +1,11 @@
 ﻿@page "/calculator"
 @using System
-@inject ClientCalculatorService CalculatorService
-@inject ICalculatorService CalculatorService
 @using BlazorWebPage.Client.Services
 @using BlazorWebPage.Client.Shared
 <link href="css/custom-buttons.css" rel="stylesheet" />
 <link href="css/styles.css" rel="stylesheet" />
+@rendermode InteractiveAuto
+
 
 <div class="container-grey">
     <div class="header">
@@ -15,7 +15,7 @@
         <div class="calc-box" tabindex="0">@Calculation</div>
     </div>
     <div class="container-white">
-        <input type="text" class="calc-box" @bind="InputNumber" tabindex="0">@(string.IsNullOrEmpty(InputNumber) ? "0" : InputNumber)/>
+        <input type="text" class="calc-box" @bind="InputNumber" tabindex="0" />
     </div>
     <div class="numblock">
 
@@ -49,5 +49,6 @@
         <button class="btn-grey" @onclick="@(() => AddDigit(","))">,</button>
         <button class="btn-grey" @onclick="@(() => AddDigit("0"))">0</button>
         <button class="btn-green" @onclick="Calculate">=</button>
+
     </div>
 </div>

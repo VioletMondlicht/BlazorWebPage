@@ -1,7 +1,11 @@
+using BlazorWebPage.Client;
 using BlazorWebPage.Client.Services;
+using BlazorWebPage.Client.Shared;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.RootComponents.Add<App>("#app");
+var services = builder.Services;
 
 // Register HttpClient the simple way
 builder.Services.AddScoped(sp => new HttpClient
@@ -10,6 +14,7 @@ builder.Services.AddScoped(sp => new HttpClient
 });
 
 // Register your service
-builder.Services.AddScoped<CatFactService>();
+services.AddScoped<CatFactService>()
+        .AddScoped<ICalculatorService, CalculatorService>();
 
 await builder.Build().RunAsync();
