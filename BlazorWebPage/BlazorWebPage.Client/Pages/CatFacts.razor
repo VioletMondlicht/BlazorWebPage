@@ -3,6 +3,7 @@
 @using BlazorWebPage.Client.Services
 @using BlazorWebPage.Client.Models
 @rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
+<link href="css/custom-buttons.css" rel="stylesheet" />
 
 
 
@@ -12,7 +13,7 @@
         <h3>Get your cat fact!</h3>
     </div>
     <br />
-    <button @onclick="FetchCatFact" class="btn btn-primary" style="color: #FFFFFF"> Get fact! </button>
+    <button class="btn-purple" @onclick="FetchCatFact"> Get fact! </button>
     <br />
     @if (isLoading)
     {

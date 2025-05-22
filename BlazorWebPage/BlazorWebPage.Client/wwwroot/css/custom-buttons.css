@@ -27,8 +27,8 @@
     display: inline-block;
     padding: 8px 16px;
 }
-.btn-red {
-    background-color: #A42026;
+.btn-purple {
+    background-color: #3a0647;
     color: white;
     border: none;
     text-align: center;
@@ -37,8 +37,8 @@
     grid-row: span 1;
 }
 
-.btn-blue {
-    background-color: #3C6287;
+.btn-green {
+    background-color: #50C878;
     color: white;
     border: none;
     text-align: center;
