@@ -2,6 +2,8 @@ using BlazorWebPage.Client.Shared;
 using BlazorWebPage.Components;
 using BlazorWebPage.BL.Contracts.Calculator;
 using BlazorWebPage.BL.Calculator;
+using BlazorWebPage.Client.Services;
+using CalculatorService = BlazorWebPage.BL.Calculator.CalculatorService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +19,12 @@ services.AddScoped<ICalculatorService, CalculatorService>()
         .AddScoped<ITokenizer, Tokenizer>()
         .AddScoped<IInterpreter, Interpreter>();
 
+services.AddHttpClient<CatFactService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-/* if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
 
@@ -32,7 +35,7 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-*/
+
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
