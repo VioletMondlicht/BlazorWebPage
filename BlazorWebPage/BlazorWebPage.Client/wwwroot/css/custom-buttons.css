@@ -1,0 +1,48 @@
+﻿.btn-lightgrey {
+    background-color: #D3D3D3;
+    color: black;
+    border: none;
+    text-align: center;
+    padding: 8px 16px;
+}
+
+.btn-lightgrey-high {
+    background-color: #D3D3D3;
+    color: #D3D3D3;
+    border: none;
+    text-align: right;
+    text-align: center;
+    padding: 8px 16px;
+    cursor: default;
+    user-select: none;
+    pointer-events: none;
+    grid-row: span 2;
+}
+
+.btn-grey {
+    background-color: #C0C0C0;
+    color: black;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding: 8px 16px;
+}
+.btn-red {
+    background-color: #A42026;
+    color: white;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding: 8px 16px;
+    grid-row: span 1;
+}
+
+.btn-blue {
+    background-color: #3C6287;
+    color: white;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding: 8px 16px;
+    font: bold;
+}

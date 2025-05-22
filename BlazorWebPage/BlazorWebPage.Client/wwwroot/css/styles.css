@@ -1,0 +1,83 @@
+﻿/* Container */
+
+.container-grey {
+    margin: 0px 5% 10px;
+    width: 250px;
+    height: 295px;
+    position: fixed;
+    background-color: #71797E;
+    border: 3px solid #3C6287;
+}
+
+.container-white {
+    height: 20px;
+    max-width: 240px;
+    width: 240px;
+    margin: 2px;
+    background-color: white;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: auto;
+}
+
+.header {
+    height: 50px;
+    padding: 5px;
+    position: relative;
+    background: #A42026;
+    color: white;
+    text-align: center;
+    font-size: 35px;
+}
+
+
+
+.calc-box {
+    /*Format*/
+    width: 240px;
+    height: 20px;
+    position: fixed;
+    padding-right: 5px;
+    max-height: 20px;
+    /*Colors*/
+    color: black;
+    border: solid black 1px;
+    /*Font*/
+    font-size: 14px;
+    text-align: right;
+    font-display: auto;
+    /*Mouse actions*/
+    
+    cursor: default;
+    white-space: nowrap;
+    /*Scroll*/
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: scroll;
+    /* Hidding Scrollbars in Textbox in popular Browsers*/
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+    .calc-box::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    }
+
+ /*Style Elemente (Linien, Blöcke etc.)*/
+
+.black-horizontal-line {
+    background-color: #3C6287;
+    height: 1px;
+    padding: 0px 2px;
+    position: relative;
+}
+
+/*Grids */
+
+.numblock {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 0px;
+    text-align: center;
+    font-size:14px;
+}
+
