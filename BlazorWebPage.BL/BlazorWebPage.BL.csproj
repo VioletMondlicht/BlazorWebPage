@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorWebPage.BL.Contracts\BlazorWebPage.BL.Contracts.csproj" />
+    <ProjectReference Include="..\BlazorWebPage\BlazorWebPage.Client\BlazorWebPage.Client.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,53 @@
 ﻿@page "/calculator"
+@using System
+@inject ClientCalculatorService CalculatorService
+@inject ICalculatorService CalculatorService
+@using BlazorWebPage.Client.Services
+@using BlazorWebPage.Client.Shared
 <link href="css/custom-buttons.css" rel="stylesheet" />
 <link href="css/styles.css" rel="stylesheet" />
 
-<h3>Calculator</h3>
+<div class="container-grey">
+    <div class="header">
+        <p>Calculator</p>
+    </div>
+    <div class="container-white">
+        <div class="calc-box" tabindex="0">@Calculation</div>
+    </div>
+    <div class="container-white">
+        <input type="text" class="calc-box" @bind="InputNumber" tabindex="0">@(string.IsNullOrEmpty(InputNumber) ? "0" : InputNumber)/>
+    </div>
+    <div class="numblock">
+
+        <button class="btn-purple" @onclick="ClearNum">CE</button>                              @*delete the last input number*@
+        <button class="btn-lightgrey-high"></button>                                            @*just a placeholder for the UI*@
+        <button class="btn-lightgrey" @onclick="DeleteDigit">←</button>                         @*delete the last digit*@ 
+        <button class="btn-lightgrey" @onclick="@(() => SwitchNegative("(-)"))">(-)</button>    @*switches negative/positive value*@
+
+        <button class="btn-purple" @onclick="ClearInputs">C</button>                            @*clears the complete calculation*@
+        <button class="btn-lightgrey" @onclick="@(() => AddOperation("("))">(</button>
+        <button class="btn-lightgrey" @onclick="@(() => AddOperation(")"))">)</button>
 
 
+        <button class="btn-lightgrey" @onclick="@(() => AddOperation("*"))">*</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("7"))">7</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("8"))">8</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("9"))">9</button>
+
+        <button class="btn-lightgrey" @onclick="@(() => AddOperation("/"))">/</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("4"))">4</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("5"))">5</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("6"))">6</button>
+
+
+        <button class="btn-lightgrey" @onclick="@(() => AddOperation("-"))">-</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("1"))">1</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("2"))">2</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("3"))">3</button>
+
+        <button class="btn-lightgrey" @onclick="@(() => AddOperation("+"))">+</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit(","))">,</button>
+        <button class="btn-grey" @onclick="@(() => AddDigit("0"))">0</button>
+        <button class="btn-green" @onclick="Calculate">=</button>
+    </div>
+</div>

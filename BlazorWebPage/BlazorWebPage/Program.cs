@@ -1,12 +1,22 @@
-using BlazorWebPage.Client.Pages;
+using BlazorWebPage.Client.Shared;
 using BlazorWebPage.Components;
+using BlazorWebPage.BL.Contracts.Calculator;
+using BlazorWebPage.BL.Calculator;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var services = builder.Services;
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+
+services.AddScoped<ICalculatorService, CalculatorService>()
+        .AddScoped<ITokenizer, Tokenizer>()
+        .AddScoped<IInterpreter, Interpreter>();
+
 
 var app = builder.Build();
 
@@ -14,6 +24,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
+
 }
 else
 {

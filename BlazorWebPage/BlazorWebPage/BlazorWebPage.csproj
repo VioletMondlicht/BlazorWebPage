@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\BlazorWebPage.BL.Contracts\BlazorWebPage.BL.Contracts.csproj" />
+	<ProjectReference Include="..\..\BlazorWebPage.BL\BlazorWebPage.BL.csproj" />
     <ProjectReference Include="..\BlazorWebPage.Client\BlazorWebPage.Client.csproj" />
     <PackageReference Include="FakeItEasy" Version="8.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.14" />
