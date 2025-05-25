@@ -1,7 +1,7 @@
 # BlazorWebPage
 
 This is my first Blazor project i made in my apprenticeship.<br>
-At work i made it with the company framework, that is why i only have a few commits here, because i copied my own code to a standalone project, fixed every version issues it had and commited it then. :) <br>
+At work i made it with the company framework, that is why i only have a few commits here, because i copied my own code to a standalone project, fixed every version issues it had and commited it then. (i was allowed to do that, because that was just a practice project) :) <br>
 My Page includes:
 
 1. Landing Page
